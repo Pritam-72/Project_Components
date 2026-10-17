@@ -228,7 +228,16 @@ export default function WindowShutter() {
           </div>
         </div>
 
-        {/* Outer frame placeholder */}
+        {/* Outer frame */}
+        <div className="absolute inset-0 overflow-hidden rounded-[3rem] z-3 pointer-events-none">
+          <Image
+            src="/image/window-shutter/window-outer-frame.webp"
+            alt="window-outer-frame"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-fit"
+          />
+        </div>
       </motion.div>
 
       {/* Text layer with smooth color transition */}
