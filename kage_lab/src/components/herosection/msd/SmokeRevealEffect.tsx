@@ -6,8 +6,7 @@ import { useTexture } from "@react-three/drei";
 
 // Preload all portfolio reveal textures so page transitions and theme changes are instantaneous
 
-// Drei preloading enabled next
-// useTexture.preload([
+useTexture.preload([
   "/image/msd/msd-csk.webp",
   "/image/msd/msd.webp",
 ]);
