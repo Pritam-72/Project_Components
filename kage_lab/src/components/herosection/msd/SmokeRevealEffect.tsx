@@ -6,7 +6,7 @@ import { useTexture } from "@react-three/drei";
 
 // Preload all portfolio reveal textures so page transitions and theme changes are instantaneous
 
-// Preload disabled during development
+// Drei preloading enabled next
 // useTexture.preload([
   "/image/msd/msd-csk.webp",
   "/image/msd/msd.webp",
@@ -58,7 +58,6 @@ const fragmentShader = `
   uniform vec2 uFrontRes;
   uniform vec2 uBackRes;
 
-  // Basic UV mapping (cover calculation pending)
   // Calculates UV mapping for object-cover behavior (preserves aspect ratio without distortion)
   vec2 getCoverUv(vec2 uv, vec2 planeRes, vec2 mediaRes) {
     float rs = planeRes.x / planeRes.y;
