@@ -10,7 +10,6 @@ import { Special_Elite } from "next/font/google";
 import MagnifierGlass from "@/components/stamps/MagnifierGlass";
 import { VscZoomIn, VscZoomOut } from "react-icons/vsc";
 
-// Special Elite typography configuration
 const specialEliteFont = Special_Elite({
   subsets: ["latin"],
   weight: ["400"],
