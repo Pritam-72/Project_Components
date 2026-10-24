@@ -72,7 +72,7 @@ const PaperTrace = () => {
   const [isSnappedOnTarget, setIsSnappedOnTarget] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
 
-  // Drawing state
+  // Drawing & brush configuration state
   const [selectedColor, setSelectedColor] = useState("#111827");
   const [strokeWidth, setStrokeWidth] = useState(DEFAULT_STROKE);
   const [history, setHistory] = useState<Stroke[]>([]);
@@ -381,7 +381,6 @@ const PaperTrace = () => {
     }
   };
 
-  // Undo/redo controls
   const handleUndo = () => {
     if (history.length === 0) return;
     const newHistory = history.slice(0, -1);
@@ -443,7 +442,7 @@ const PaperTrace = () => {
   };
 
   // Export
-  // Export handler disabled initially
+  // Export handler
   const handleExport = async () => {
     return;
     if (!exportRef.current) return;
