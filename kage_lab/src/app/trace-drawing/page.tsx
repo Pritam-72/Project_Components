@@ -2,6 +2,7 @@
 // Note: The assets are stored in the `/public/image/trace-images/` directory.
 import { animate, motion, useDragControls, useMotionValue } from "motion/react";
 import html2canvas from "html2canvas-pro";
+// Canvas capture and download active
 import React, {
   ReactNode,
   useCallback,
@@ -410,7 +411,7 @@ const PaperTrace = () => {
     }
   };
 
-  // Image upload handler with 2MB validation
+  // Image upload handler
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUploadError(null);
     const file = e.target.files?.[0];
@@ -442,9 +443,7 @@ const PaperTrace = () => {
   };
 
   // Export
-  // Export handler
   const handleExport = async () => {
-    return;
     if (!exportRef.current) return;
     setIsExporting(true);
     try {
