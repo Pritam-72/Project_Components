@@ -72,7 +72,7 @@ const PaperTrace = () => {
   const [isSnappedOnTarget, setIsSnappedOnTarget] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
 
-  // Drawing & brush configuration state
+  // Drawing state
   const [selectedColor, setSelectedColor] = useState("#111827");
   const [strokeWidth, setStrokeWidth] = useState(DEFAULT_STROKE);
   const [history, setHistory] = useState<Stroke[]>([]);
@@ -381,6 +381,7 @@ const PaperTrace = () => {
     }
   };
 
+  // Multi-step undo/redo active
   const handleUndo = () => {
     if (history.length === 0) return;
     const newHistory = history.slice(0, -1);
