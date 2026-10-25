@@ -2,7 +2,6 @@
 // Note: The assets are stored in the `/public/image/trace-images/` directory.
 import { animate, motion, useDragControls, useMotionValue } from "motion/react";
 import html2canvas from "html2canvas-pro";
-// Canvas capture and download active
 import React, {
   ReactNode,
   useCallback,
