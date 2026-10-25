@@ -381,7 +381,6 @@ const PaperTrace = () => {
     }
   };
 
-  // Multi-step undo/redo active
   const handleUndo = () => {
     if (history.length === 0) return;
     const newHistory = history.slice(0, -1);
@@ -411,7 +410,7 @@ const PaperTrace = () => {
     }
   };
 
-  // Image upload handler
+  // Image upload handler with 2MB validation
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUploadError(null);
     const file = e.target.files?.[0];
