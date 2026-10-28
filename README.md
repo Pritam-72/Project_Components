@@ -1,97 +1,105 @@
-# Kage Lab
+# Kage Lab · Interactive Creative UI Components
 
-An interactive collection of animation and creative UI experiments built with
-Next.js, React, TypeScript, Tailwind CSS, Motion, and Three.js.
+[![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.3-blue?style=flat-square&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Three.js](https://img.shields.io/badge/Three.js-r185-black?style=flat-square&logo=three.js)](https://threejs.org/)
+[![Motion](https://img.shields.io/badge/Motion-13.3-FF0055?style=flat-square)](https://motion.dev/)
 
-## Features
+An interactive laboratory of high-fidelity animation and creative UI experiments exploring WebGL shaders, tactile physics simulations, smooth canvas drawing engines, and reactive environmental lighting.
 
-- **MSD hero** - A full-screen Mahendra Singh Dhoni landing experience with a
-  Three.js smoke-reveal transition between images.
-- **Interactive stamps** - Explore, shuffle, zoom, and magnify location stamps
-  from Delhi, Chennai, Mumbai, and Kerala.
-- **Trace drawing** - Draw over selectable images with smooth strokes, undo and
-  redo controls, image upload, and export support.
-- **Window shutter** - Drag a shutter open and closed to reveal a video scene,
-  with responsive lighting and shutter sound effects.
+---
 
-## Routes
+## 🎨 Experiments Showcase
 
-| Route | Experience |
-| --- | --- |
-| `/hero/msd` | Mahendra Singh Dhoni smoke-reveal hero |
-| `/stamps` | Interactive location stamps |
-| `/trace-drawing` | Image tracing and drawing canvas |
-| `/window-shutter` | Draggable window shutter animation |
+| Route | Experience | Tech Highlights |
+|---|---|---|
+| [`/hero/msd`](file:///kage_lab/src/app/hero/msd/page.tsx) | **Mahendra Singh Dhoni Smoke-Reveal Hero** | React Three Fiber, Custom GLSL shaders, procedural curl noise, aspect-cover UV math, difference-blend typography |
+| [`/stamps`](file:///kage_lab/src/app/stamps/page.tsx) | **Interactive Postal Desk & Magnifier** | Vintage Indian stamp collection (Delhi, Chennai, Mumbai, Kerala), deck shuffle physics, dual-layer optical loupe |
+| [`/trace-drawing`](file:///kage_lab/src/app/trace-drawing/page.tsx) | **Pressure-Sensitive Trace Studio** | HTML5 Canvas, Catmull-Rom & Bezier stroke smoothing, multi-level undo/redo, template selector, PNG export |
+| [`/window-shutter`](file:///kage_lab/src/app/window-shutter/page.tsx) | **Kinematic Train Window Shutter** | Motion vertical drag bounds, real-time exposure brightness filter, audio playback cues, spring-snap kinematics |
+| [`/`](file:///kage_lab/src/app/page.tsx) | **Interactive Component Lab Hub** | Central showcase gallery with live navigation switcher, technical tags, and experiment summaries |
 
-The root route (`/`) is currently a minimal placeholder.
+---
 
-## Tech stack
+## 🛠️ Architecture & Tech Stack
 
-- [Next.js](https://nextjs.org/) 16 with the App Router
-- [React](https://react.dev/) 19
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Motion](https://motion.dev/)
-- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/)
-- [Three.js](https://threejs.org/)
-- [GSAP](https://gsap.com/)
-- [html2canvas-pro](https://github.com/niklasvh/html2canvas-pro)
+- **Framework:** Next.js 16 (App Router)
+- **UI Runtime:** React 19
+- **Languages:** TypeScript 5, GLSL (OpenGL Shading Language)
+- **Styling:** Tailwind CSS v4, PostCSS
+- **Animation & Physics:** Motion (Framer Motion v13), GSAP
+- **3D & WebGL:** Three.js, React Three Fiber (R3F), Drei
+- **Export Utility:** `html2canvas-pro`
 
-## Getting started
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 20 or newer
-- npm
+- Node.js 20+ installed
+- npm or pnpm
 
-### Installation
-
-From the `kage_lab` directory, install the dependencies:
+### Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/Pritam-72/Project_Components.git
+
+# Navigate into the project directory
+cd Project_Components/kage_lab
+
+# Install dependencies
 npm install
-```
 
-### Development
-
-Start the local development server:
-
-```bash
+# Start development server
 npm run dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) in your browser to explore the interactive showcase hub.
 
-### Production build
-
-Create and run an optimized production build:
+### Production Build
 
 ```bash
 npm run build
 npm run start
 ```
 
-### Linting
+---
 
-```bash
-npm run lint
-```
-
-## Project structure
+## 📁 Repository Layout
 
 ```text
 kage_lab/
 ├── public/
-│   └── image/                 # Images, videos, and audio used by the demos
+│   └── image/                 # High-resolution textures, videos, and sound effects
+│       ├── msd/               # Mahendra Singh Dhoni portraits
+│       ├── stamp/             # Delhi, Chennai, Mumbai, Kerala stamp artwork
+│       ├── trace-images/      # Architectural line-art tracing templates
+│       └── window-shutter/    # Shutter textures and ambient train footage
 ├── src/
-│   ├── app/                  # App Router pages and global styles
-│   └── components/           # Reusable interactive components
+│   ├── app/                   # App Router pages and route handlers
+│   │   ├── hero/msd/          # 3D WebGL smoke-reveal hero
+│   │   ├── stamps/            # Postal desk simulation
+│   │   ├── trace-drawing/     # Canvas drawing studio
+│   │   ├── window-shutter/    # Kinematic shutter experience
+│   │   ├── globals.css        # Core stylesheet and design tokens
+│   │   └── page.tsx           # Showcase gallery index
+│   ├── components/            # Reusable components
+│   │   ├── common/            # Loading spinners & UI primitives
+│   │   ├── herosection/       # SmokeRevealEffect shader mesh
+│   │   ├── navigation/        # LabNavbar quick switcher
+│   │   └── stamps/            # MagnifierGlass dual-layer loupe
+│   ├── types/                 # Shared TypeScript interfaces
+│   └── utils/                 # Motion presets and Web Audio utilities
 ├── next.config.ts
 ├── package.json
 └── tsconfig.json
 ```
 
-## Assets
+---
 
-Demo assets are served from `public/image/` and referenced with paths such as
-`/image/msd/msd.webp`. Keep new static images, videos, and audio in `public/`
-so they can be loaded directly by the browser.
+## 📄 License
+
+MIT © [Preetimohan Pratihari](https://github.com/Pritam-72)
